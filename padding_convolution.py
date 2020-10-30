@@ -1,4 +1,5 @@
 import cv2
+import matplotlib.pyplot as plt
 import numpy as np
 
 def padding_conv(A,B):
@@ -33,10 +34,12 @@ A = np.array(matrix)
 filtro = [[1,0],[0,0.5]]
 B = np.array(filtro)
 print(padding_conv(A,B))
-imagen = cv2.imread('imagen.jpg')
-imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
+#imagen = cv2.imread('imagen.jpg')
+#imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
 kernel = [[1,1,1],[1,0,1],[1,1,1]]
 K = np.array(kernel)
-print(padding_conv(imagen,K))
+##print(padding_conv(imagen,K))
+#cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,K))
+imagen = cv2.imread('imagenG1.jpg')
+imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
 cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,K))
-
