@@ -12,7 +12,7 @@ def padding_conv(A,B):
     for i in range(1,len(zero) -1):
         for j in range(1,len(zero[0]) -1):
             zero[i][j] = A[i-1][j-1]
-    print(zero)
+   # print(zero) descomentar para probar que la matriz zeros agrego el marco de 0s
 
 
 
@@ -28,17 +28,17 @@ def padding_conv(A,B):
 
 
     return C
-matrix = [[1,0,0.5,0.5],[0,0.5,1,0],[0,1,0.5,1],[1,0.5,0.5,1]]
-A = np.array(matrix)
-filtro = [[1,0],[0,0.5]]
-B = np.array(filtro)
-print(padding_conv(A,B))
+#matrix = [[1,0,0.5,0.5],[0,0.5,1,0],[0,1,0.5,1],[1,0.5,0.5,1]] matriz caso prueba
+#A = np.array(matrix)
+#filtro = [[1,0],[0,0.5]]
+#B = np.array(filtro) filtro prueba
+#print(padding_conv(A,B)) 
 #imagen = cv2.imread('imagen.jpg')
 #imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
-kernel = [[1,1,1],[1,0,1],[1,1,1]]
-K = np.array(kernel)
+filtro = [[1,1,1],[1,0,1],[1,1,1]]  #filtro sugerido en clase para usar la función
+F = np.array(filtro)
 ##print(padding_conv(imagen,K))
 #cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,K))
 imagen = cv2.imread('imagenparapruebas.jpg')
 imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
-cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,K))
+cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,F))
