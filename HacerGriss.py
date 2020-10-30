@@ -8,9 +8,9 @@ def gris(im):
     for i in range(im.shape[0]):
         for j in range(im.shape[1]):
             temp=0
-            for k in range(im.shape[2]):
-                temp += im[i,j,k]
+            temp =int(im[i,j,0])+int(im[i,j,1])+int(im[i,j,2])
             gray[i,j]= temp/3
+            print(gray)
             return gray
 
 
