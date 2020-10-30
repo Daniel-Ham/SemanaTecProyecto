@@ -18,7 +18,7 @@ def gris(im):
             temp =int(im[i,j,0])+int(im[i,j,1])+int(im[i,j,2])
             gray[i,j]= temp/3
             print(gray)
-            return gray
+    return gray
 
 def validacionV(a):
 	for i in range(a.shape[0]):
