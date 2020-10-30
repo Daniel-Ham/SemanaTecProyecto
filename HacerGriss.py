@@ -3,6 +3,7 @@ from numpy import zeros
 import matplotlib.pyplot as plt
 import numpy as np
 im=cv2.imread('imagen.jpg')
+im=cv2.cvtColor(im,cv2.COLOR_BGR2RGB)
 def gris(im):
     gray= zeros((im.shape[0],im.shape[1]))
     for i in range(im.shape[0]):
@@ -14,7 +15,7 @@ def gris(im):
             return gray
 
 
-def ConvolusionSinP(gray,B):
+def ConvolucionSinP(gray,B):
     C=zeros((gray.shape[0]-2,gray.shape[1]-2))
     for i in range(C.shape[0]):
         for j in range(C.shape[1]):
@@ -25,10 +26,7 @@ def ConvolusionSinP(gray,B):
                 C[i][j]=temp
     return C            
 B= np.array([[1,1,1],[1,0,1],[1,1,1]])
-imagenG1=ConvolusionSinP(gris(im),B)
+imagenG1=ConvolucionSinP(gris(im),B)
 cv2.imwrite("imagenG1.jpg",imagenG1)
-
-
-
 
 
