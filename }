@@ -1,0 +1,20 @@
+import cv2
+import numpy as np
+
+def padding_conv(A,B):
+    C = np.zeros((len(A), len(A[0])))
+    suma = 0
+    for i in range(len(C)):
+        for j in range(len(C[0])):
+            suma = 0
+            for iaux in range(len(B)):
+                for jaux in range(len(B[0])):
+                    suma += A[i + iaux][j + jaux]*B[iaux][jaux]
+            C[i][j] = suma
+    return C
+matrix = [[1,0,0.5,0.5],[0,0.5,1,0],[0,1,0.5,1],[1,0.5,0.5,1]]
+A = np.array(A)
+filtro = [[1,0],[0,0.5]]
+B = np.array(filtro)
+print(padding_conv(A,B))
+
