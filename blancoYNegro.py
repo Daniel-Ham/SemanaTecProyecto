@@ -9,14 +9,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 im=cv2.imread('imagen.jpg')
 im=cv2.cvtColor(im,cv2.COLOR_BGR2RGB)
+im = cv2.cvtColor(im,cv2.COLOR_RGB2GRAY)
 
-def gris(im):
-    gray= np.zeros((im.shape[0],im.shape[1]))
-    for i in range(im.shape[0]):
-        for j in range(im.shape[1]):
-            temp =im[i,j,0]+im[i,j,1]+im[i,j,2]
-            gray[i,j]= int(temp/3)
-    return gray
+#def gris(im):
+   #gray= np.zeros((im.shape[0],im.shape[1]))
+    #for i in range(im.shape[0]):
+        #for j in range(im.shape[1]):
+            #temp =im[i,j,0]+im[i,j,1]+im[i,j,2]
+            #gray[i,j]= int(temp/3)
+    #return gray
 
 def validacionV(a):
 	for i in range(a.shape[0]):
@@ -28,12 +29,13 @@ def validacionV(a):
 	return a
 
 B= np.array([[1,1,1],[1,0,1],[1,1,1]])
-a = gris(im)
+#a = gris(im)
 
-print(a)
-print(a.shape)
+#print(a)
+#print(a.shape)
 
-imagenBN = validacionV(a)
+#imagenBN = validacionV(a)
+imagenBN = validacionV(im)
 
 cv2.imwrite("imagenBN.jpg",imagenBN)
-cv2.imwrite("imagenGR.jpg", a)
+#cv2.imwrite("imagenGR.jpg", a)
