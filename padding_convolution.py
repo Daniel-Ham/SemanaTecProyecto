@@ -22,8 +22,7 @@ def padding_conv(A,B):
             for iaux in range(len(B)):
                 for jaux in range(len(B[0])):
                     suma += zero[i+iaux][j+jaux]*B[iaux][jaux]
-                    if suma > 255:
-                        suma = 255
+                    
             C[i][j] = suma
  
 
@@ -40,6 +39,6 @@ kernel = [[1,0,1],[0,0,0],[1,0,3]]
 K = np.array(kernel)
 ##print(padding_conv(imagen,K))
 #cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,K))
-imagen = cv2.imread('imagenG1.jpg')
+imagen = cv2.imread('imagenparapruebas.jpg')
 imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
 cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,K))
