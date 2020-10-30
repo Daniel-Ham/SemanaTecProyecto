@@ -11,13 +11,11 @@ im=cv2.imread('imagen.jpg')
 im=cv2.cvtColor(im,cv2.COLOR_BGR2RGB)
 
 def gris(im):
-    gray= zeros((im.shape[0],im.shape[1]))
+    gray= np.zeros((im.shape[0],im.shape[1]))
     for i in range(im.shape[0]):
         for j in range(im.shape[1]):
-            temp=0
-            temp =int(im[i,j,0])+int(im[i,j,1])+int(im[i,j,2])
-            gray[i,j]= temp/3
-            print(gray)
+            temp =im[i,j,0]+im[i,j,1]+im[i,j,2]
+            gray[i,j]= int(temp/3)
     return gray
 
 def validacionV(a):
@@ -32,9 +30,10 @@ def validacionV(a):
 B= np.array([[1,1,1],[1,0,1],[1,1,1]])
 a = gris(im)
 
-#print(validacionV(a))
-#print(a.shape)
+print(a)
+print(a.shape)
 
 imagenBN = validacionV(a)
 
 cv2.imwrite("imagenBN.jpg",imagenBN)
+cv2.imwrite("imagenGR.jpg", a)
