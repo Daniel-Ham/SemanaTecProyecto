@@ -10,7 +10,7 @@ def gris(im):
             temp=0
             for k in range(im.shape[2]):
                 temp += im[i,j,k]
-            gray[i,j]= temp/3/255
+            gray[i,j]= temp/3
             return gray
 
 
