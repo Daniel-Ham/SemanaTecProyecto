@@ -36,7 +36,7 @@ B = np.array(filtro)
 print(padding_conv(A,B))
 #imagen = cv2.imread('imagen.jpg')
 #imagen = cv2.cvtColor(imagen,cv2.COLOR_BGR2GRAY)
-kernel = [[1,1,1],[1,0,1],[1,1,1]]
+kernel = [[1,0,1],[0,0,0],[1,0,3]]
 K = np.array(kernel)
 ##print(padding_conv(imagen,K))
 #cv2.imwrite('imagenpruebapadding.jpg',padding_conv(imagen,K))
